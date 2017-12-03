@@ -1,0 +1,22 @@
+<Configuation>
+    <ThresholdFilter level="all"/>
+    <Appenders>
+        <RollingFile name = "RollingAppender" filename="logs/mda.log" filePattern="logs/archived/mda-%d{yyyy-MM-dd}_%i.log.zip" append="false">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="125"/>
+        </RollingFile>
+        <Async name="Async">
+            <AppenderRef ref="RollingAppender"/>
+        </Async>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="Async"/>
+        </Root>
+    </Loggers>
+</Configuation>

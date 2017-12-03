@@ -1,0 +1,15 @@
+<Configuation>
+    <ThresholdFilter level="all"/>
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <!--<PatternLayout pattern="%d %-5p method: [%t] %C{2} (%F:%L) - %m%n tx.id=%X{transaction.id}"/>-->
+            <PatternLayout pattern="%d %-5p method: [%t] %C{2} (%F:%L) tx.id=%X{transaction.id} - %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="all">
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuation>

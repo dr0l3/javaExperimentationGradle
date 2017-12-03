@@ -1,0 +1,3 @@
+group 'droletours'
+version '1.0-SNAPSHOT'
+mainClassName = 'LogginChangeAtRuntime'
